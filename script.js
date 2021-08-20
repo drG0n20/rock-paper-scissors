@@ -25,7 +25,7 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        console.log("It's a TIE!");
+        return "It's a TIE!";
     } else if (playerSelection === "rock" && computerSelection === "scissors"
         || playerSelection == "paper" && computerSelection == "rock"
         || playerSelection == "scissors" && computerSelection == "paper") {
@@ -38,12 +38,20 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    while (playerCounter < 5) {
-        let playerSelection = prompt("What is your pick? Rock, paper, or scissors???");
+    while (playerCounter < 5 && computerCounter < 5) {
+        let playerSelection = prompt("Pick your weapon: rock, paper, scissors");
+        // let playerSelection = "rock";
         let computerSelection = computerPlay();
         console.log(computerSelection);
         console.log(playRound(playerSelection, computerSelection));
         console.log("PLAYER: " + playerCounter + " - " + "COMPUTER: " + computerCounter);
+    }
+    if (playerCounter >= 5) {
+        console.log("--------------------");
+        console.log("Player WINS!!!! " + playerCounter + " to " + computerCounter);
+    } else if (computerCounter >= 5) {
+        console.log("--------------------");
+        console.log("Computer WINS!!!! " + computerCounter + " to " + playerCounter);
     }
 }
 game();
