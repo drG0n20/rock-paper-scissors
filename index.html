@@ -5,12 +5,25 @@
     <title>Page Title</title>
     <meta charset="UTF-8" />
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script type="text/javascript" src="script.js"></script>
+    <!-- <script type="text/javascript" src="script.js"></script> -->
 
 </head>
 
 <body>
+    <div id="wrapper">
+        <button id="PAPER">PAPER</button>
+        <button id="ROCK">ROCK</button>
+        <button id="SCISSORS">SCISSORS</button>
+    </div>
+    
     <script>
+        wrapper.addEventListener('click', (event) => {
+            const isButton = event.target.nodeName === 'BUTTON';
+            if(!isButton){
+                return;
+            }
+            console.dir(event.target.id);
+        })
         
     </script>
 

@@ -38,11 +38,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    while (playerCounter < 5 && computerCounter < 5) {
-        let playerSelection = prompt("Pick your weapon: rock, paper, scissors");
+    while (true) {
+        // let playerSelection = prompt("Pick your weapon: rock, paper, scissors");
         // let playerSelection = "rock";
         let computerSelection = computerPlay();
-        console.log(computerSelection);
+        console.log("computerSelection: " + computerSelection);
         console.log(playRound(playerSelection, computerSelection));
         console.log("PLAYER: " + playerCounter + " - " + "COMPUTER: " + computerCounter);
     }
@@ -54,5 +54,21 @@ function game() {
         console.log("Computer WINS!!!! " + computerCounter + " to " + playerCounter);
     }
 }
-game();
+game(); 
+
+const btn = document.querySelector('button');
+
+function logText(e){
+    console.log(this,classList.value);
+}
+
+btn.forEach(btn => btn.addEventListener('click', logText));
+    
+    
+
+
+
+
+
+
 
