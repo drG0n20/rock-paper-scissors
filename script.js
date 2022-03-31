@@ -56,13 +56,15 @@ function game() {
 }
 game(); 
 
-const btn = document.querySelector('button');
+// const btn = document.querySelector('button');
 
-function logText(e){
-    console.log(this,classList.value);
-}
+// function logText(e){
+//     console.log(this,classList.value);
+// }
 
-btn.forEach(btn => btn.addEventListener('click', logText));
+// btn.forEach(btn => btn.addEventListener('click', logText));
+
+
     
     
 
