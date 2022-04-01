@@ -1,99 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <title>Page Title</title>
     <meta charset="UTF-8" />
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+    ></script>
+  </head>
+  <body>
+    <h2>Computer: <span id="computer"></span></h2>
+    <h2>Player: <span id="player"></span></h2>
+    <h2>Result: <span id="result"></span></h2>
 
-</head>
+    <button id="paper">PAPER</button>
+    <button id="rock">ROCK</button>
+    <button id="scissors">SCISSORS</button>
 
-<body>
-
-    <button id="PAPER">PAPER</button>
-    <button id="ROCK">ROCK</button>
-    <button id="SCISSORS">SCISSORS</button>
-
-
-    <script>
-        let computerCounter = 0;
-        let playerCounter = 0;
-        const choices = ["Rock", "Paper", "Scissors"];
-
-        let computerSelection = () => {
-            computerSelection = choices[Math.floor(Math.random() * 3)];
-            console.log(computerSelection);
-        }
-
-        const rock = document.querySelector("#ROCK");
-        const paper = document.querySelector("#PAPER");
-        const scissors = document.querySelector("#SCISSORS");
-
-
-        let playerSelection = (e) => {
-            if (e.target.id === "ROCK") {
-                console.log(choices[0]);
-                return choices[0];
-            } else if (e.target.id === "PAPER") {
-                console.log(choices[1]);
-                return choices[1];
-            } else if (e.target.id === "SCISSORS") {
-                console.log(choices[2]);
-                return choices[2];
-            } else {
-                console.log("ERORRROR");
-            }
-        }
-
-        rock.addEventListener('click', playerSelection);
-        paper.addEventListener('click', playerSelection);
-        scissors.addEventListener('click', playerSelection);
-
-        console.log(playerSelection);
-        console.log(computerSelection);
-
-        function playRound(playerSelection, computerSelection) {
-
-            if (playerSelection === computerSelection) {
-                return "It's a TIE!";
-            } else if (playerSelection === "rock" && computerSelection === "scissors"
-                || playerSelection == "paper" && computerSelection == "rock"
-                || playerSelection == "scissors" && computerSelection == "paper") {
-                playerCounter++;
-                console.log("player")
-                return "Player WINs!";
-            } else {
-                // computerCounter++;
-                // console.log("computer")
-                return "Computer WINs!";
-            }
-        }
-
-        function game() {
-            // for (var i = 0; i<2; i++) {
-            // computerPlay();
-            // playerSelection();
-            // let playerSelection = playerSelection();
-            // // let playerSelection = prompt("Pick your weapon: rock, paper, scissors");
-            // // let playerSelection = "rock";
-            // let computerSelection = computerPlay();
-            console.log("computerSelection: " + computerSelection);
-            console.log(playRound(playerSelection, computerSelection));
-            console.log("PLAYER: " + playerCounter + " - " + "COMPUTER: " + computerCounter);
-            // }
-            if (playerCounter >= 5) {
-                console.log("--------------------");
-                console.log("Player WINS!!!! " + playerCounter + " to " + computerCounter);
-            } else if (computerCounter >= 5) {
-                console.log("--------------------");
-                console.log("Computer WINS!!!! " + computerCounter + " to " + playerCounter);
-            }
-        }
-
-        game();
-    </script>
-
-</body>
-
+    <script type="text/javascript" src="script.js"></script>
+  </body>
 </html>
