@@ -1,38 +1,48 @@
 //function computerPlay
 
-const computerSelection = document.getElementById('computer');
-const playerSelection = document.getElementById('player');
-const result = document.getElementById('result'); 
+const computerSelectionDisplay = document.getElementById('computer');
+const playerSelectionDisplay = document.getElementById('player');
+const result = document.getElementById('result');
+const choices = document.querySelectorAll('button');
+let playerChoice;
+let computerChoice;
 
-function computerPlay() {
-  const randomNumber = Math.floor(Math.random() * 3);
+choices.forEach((choice) =>
+  choice.addEventListener('click', (e) => {
+    playerChoice = e.target.id;
+    playerSelectionDisplay.innerHTML = playerChoice;
+    generateComputerChoice();
+  })
+);
+
+function generateComputerChoice() {
+  const randomNumber = Math.floor(Math.random() * 3) + 1;
 
   if (randomNumber === 1) {
-    computerSelection = "rock";
-  } else if (computerSelection === 2) {
-    computerSelection = "papper";
+    computerChoice = 'rock';
+  } else if (randomNumber === 2) {
+    computerChoice = 'papper';
   } else {
-    computerSelection = "scissors";
+    computerChoice = 'scissors';
   }
-
-  return randomNumber;
+  computerSelectionDisplay.innerHTML = computerChoice;
 }
 
-function playRound() {
-  if (playerSelection === computerSelection) {
-    result = "It's a TIE!";
-  } else if (
-    (playerSelection === "rock" && computerSelection === "scissors") ||
-    (playerSelection == "paper" && computerSelection == "rock") ||
-    (playerSelection == "scissors" && computerSelection == "paper")
-  ) {
-    playerCounter++;
-    result = "Player WINs!";
-  } else {
-    computerCounter++;
-    result = "Computer WINs!";
-  }
-}
+// function playRound() {
+//   if (playerSelection === computerSelection) {
+//     result = "It's a TIE!";
+//   } else if (
+//     (playerSelection === "rock" && computerSelection === "scissors") ||
+//     (playerSelection == "paper" && computerSelection == "rock") ||
+//     (playerSelection == "scissors" && computerSelection == "paper")
+//   ) {
+//     playerCounter++;
+//     result = "Player WINs!";
+//   } else {
+//     computerCounter++;
+//     result = "Computer WINs!";
+//   }
+// }
 
 // function game() {
 //     while (true) {
